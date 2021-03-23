@@ -1,0 +1,30 @@
+{
+  "name": "js-goalsolver",
+  "version": "0.0.1",
+  "description": "A Javascript implementation of the goalsolver library.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "fix-lint": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectSarica/js-goalsolver.git"
+  },
+  "keywords": [
+    "pathfinder",
+    "goalsolver",
+    "utility",
+    "ai"
+  ],
+  "author": "TheDudeFromCI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProjectSarica/js-goalsolver/issues"
+  },
+  "homepage": "https://github.com/ProjectSarica/js-goalsolver#readme",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
