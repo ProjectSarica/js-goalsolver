@@ -1,5 +1,5 @@
-import GoalSolver from './GoalSolver'
-
-module.exports = {
-  GoalSolver
-}
+export * from './GoalSolver'
+export * from './Handler'
+export * from './Heuristic'
+export * from './InvalidTaskType'
+export * from './Task'
