@@ -26,5 +26,8 @@
   "homepage": "https://github.com/ProjectSarica/js-goalsolver#readme",
   "devDependencies": {
     "standard": "^16.0.3"
+  },
+  "dependencies": {
+    "aggregate-error": "^3.1.0"
   }
 }
