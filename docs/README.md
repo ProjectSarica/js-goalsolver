@@ -1,5 +1,14 @@
 <h1 align="center">JS-GoalSolver</h1>
 
+<p align="center">
+  <img src="https://github.com/ProjectSarica/js-goalsolver/workflows/Build/badge.svg" />
+  <img src="https://img.shields.io/npm/v/js-goalsolver" />
+  <img src="https://img.shields.io/github/repo-size/ProjectSarica/js-goalsolver" />
+  <img src="https://img.shields.io/npm/dm/js-goalsolver" />
+  <img src="https://img.shields.io/github/contributors/ProjectSarica/js-goalsolver" />
+  <img src="https://img.shields.io/github/license/ProjectSarica/js-goalsolver" />
+</p>
+
 ## Summary
 
 JS-GoalSolver is a JavaScript library for heuristic-based goal-solving by breaking a problem into task types, with a given list of handlers. By creating many different handlers to all execute the same tasks in different ways, the target agent can adapt to the given situation and resolve the same task differently based on it's current surroundings.
