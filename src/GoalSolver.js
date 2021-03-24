@@ -94,6 +94,24 @@ class GoalSolver {
 
     return h
   }
+
+  /**
+   * Executes the given task.
+   * @param {Task} task - The task to execute.
+   * @param {*} searchDepth - The maximum search depth then choosing task handlers.
+   */
+  async execute (task, searchDepth) {
+    const heuristic = await this.getHeuristic(task, searchDepth)
+    if (heuristic == null) {
+      throw new Error(`No handlers available for the given task!\ntask = ${task}`)
+    }
+
+    for (const childTask of heuristic.childTasks) {
+      await this.execute(childTask, searchDepth)
+    }
+
+    await heuristic.handler.execute(task)
+  }
 }
 
 export default GoalSolver
