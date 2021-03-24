@@ -4,6 +4,12 @@
 
 JS-GoalSolver is a JavaScript library for heuristic-based goal-solving by breaking a problem into task types, with a given list of handlers. By creating many different handlers to all execute the same tasks in different ways, the target agent can adapt to the given situation and resolve the same task differently based on it's current surroundings.
 
+## Installation
+
+```bash
+npm install js-goalsolver
+```
+
 ## Documentation
 
 [API](./api.md)
