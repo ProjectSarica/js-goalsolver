@@ -12,7 +12,7 @@ class AndTask extends Task {
     super('and')
 
     /**
-     * A list of subtasks that should be attempted. Order independent.
+     * A list of subtasks that should be executed. Order independent.
      * @type Task[]
      * @public
      * @readonly
@@ -20,7 +20,7 @@ class AndTask extends Task {
     this.subtasks = subtasks
 
     /**
-     * When estimating which child task to attempt next, how deep should the search be?
+     * When estimating which child task to execute next, how deep should the search be?
      * @type number
      * @public
      */

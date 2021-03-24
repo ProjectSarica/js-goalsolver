@@ -20,11 +20,19 @@ class OrTask extends Task {
     this.subtasks = subtasks
 
     /**
-     * When estimating which child task to attempt next, how deep should the search be?
-     * @type number
-     * @public
-     */
+      * When estimating which child task to attempt next, how deep should the search be?
+      * @type number
+      * @public
+      */
     this.searchDepth = 3
+
+    /**
+      * The order in which subtasks are attempted. If true, the easiest takes
+      * are attempted first. If false, harder tasks are attempted first.
+      * @type boolean
+      * @public
+      */
+    this.easiestFirst = true
   }
 }
 
