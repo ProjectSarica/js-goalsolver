@@ -1,4 +1,4 @@
-import { OrTaskHandler } from './handlers'
+import { OrTaskHandler, AndTaskHandler } from './handlers'
 
 /**
  * A solver to calculating the best approach to executing the given task, if possible.
@@ -14,7 +14,8 @@ class GoalSolver {
      * @private
      */
     this.handlers = [
-      new OrTaskHandler(this)
+      new OrTaskHandler(this),
+      new AndTaskHandler(this)
     ]
   }
 

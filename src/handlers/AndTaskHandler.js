@@ -1,27 +1,26 @@
 import Heuristic from '../Heuristic'
-import AggregateError from 'aggregate-error'
 import MultiSubtaskHandler from './MultiSubtaskHandler'
 
 /**
- * A basic handler for executing "or" tasks.
+ * A basic handler for executing "and" tasks.
  */
-class OrTaskHandler extends MultiSubtaskHandler {
+class AndTaskHandler extends MultiSubtaskHandler {
   /**
-   * Creates a new Or task handler.
+   * Creates a new And task handler.
    */
   constructor (goalSolver) {
-    super('or', goalSolver)
+    super('and', goalSolver)
   }
 
   /** @inheritdoc */
   async getHeuristic (task) {
     if (task.taskType !== this.taskType) return null
 
-    const { next } = await this.getNextSubtask(task.subtasks, task.searchDepth, task.easiestFirst)
-    if (next == null) return null
-
     const heuristic = new Heuristic(this)
-    heuristic.childTasks.push(next)
+    for (const subtask of task.subtasks) {
+      heuristic.childTasks.push(subtask)
+    }
+
     return heuristic
   }
 
@@ -30,21 +29,13 @@ class OrTaskHandler extends MultiSubtaskHandler {
     // Make a copy of the subtask list to avoid editing the original object.
     const subtasks = [...task.subtasks]
 
-    const errors = []
     while (subtasks.length > 0) {
       const { next } = this.getNextSubtask(subtasks, task.searchDepth, task.easiestFirst)
       subtasks.splice(subtasks.indexOf(next), 1)
 
-      try {
-        await this.goalSolver.execute(next)
-        return
-      } catch (err) {
-        errors.push(errors)
-      }
+      await this.goalSolver.execute(next)
     }
-
-    throw new AggregateError(errors, 'All subtasks failed!')
   }
 }
 
-export default OrTaskHandler
+export default AndTaskHandler
