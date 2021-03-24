@@ -1,3 +1,3 @@
-export * from './OrTask'
-export * from './AndTask'
-export * from './NotTask'
+export * as OrTask from './OrTask'
+export * as AndTask from './AndTask'
+export * as NotTask from './NotTask'
